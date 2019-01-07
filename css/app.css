@@ -9,3 +9,8 @@
   text-transform: uppercase;
   font-weight: bold;
 }
+.navbar-item .icon {
+  color: yellow;
+  font-weight: bold;
+  padding-left: 15px;
+}
