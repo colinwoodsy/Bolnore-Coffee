@@ -1,0 +1,11 @@
+.title {
+  padding-bottom: 30px;  
+}
+.button {
+  min-width: 120px;
+  margin: 0 15px;
+}  
+.navbar-item {
+  text-transform: uppercase;
+  font-weight: bold;
+}
