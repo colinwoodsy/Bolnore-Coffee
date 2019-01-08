@@ -33,8 +33,15 @@
       </nav>
     </div>
 
-    <div class="hero-body" id="app">
+    <div class="hero-body" id="app">    
       <div class="container has-text-centered">
+      <!-- <pre>
+      questionIndex: {{ questionIndex }}
+      questions.length: {{ questions.length }}
+      showButtons: {{ showButtons }}
+      showTextInput: {{ showTextInput }}
+      </pre> -->
+        <template v-if="questionIndex < questions.length || questionIndex >= 0">
           <transition
             appear
             name="bounce"
@@ -47,7 +54,6 @@
             </template>
           </transition>
           <transition
-            appear
             name="bounce"
             enter-active-class="bounceInUp"
             leave-active-class="bounceOutDown">
@@ -56,6 +62,30 @@
               <a class="button is-large is-danger" key="no" @click="answerQuestion(-1)">NO</a>
             </div>
           </transition>
+          <transition
+            appear
+            name="bounce"
+            enter-active-class="bounceInUp"
+            leave-active-class="bounceOutDown">
+            <div v-show="showTextInput">
+              <textarea class="textarea" v-model="textAnswer" placeholder="e.g. I would support a coffee shop in Bolnore village and help spread the word."></textarea>
+              <a style="margin-top: 20px" class="button is-large is-primary" key="yes" @click="answerQuestion(1, textAnswer)">SUBMIT</a>
+            </div>            
+          </transition>          
+        </template>
+
+        <transition name="fadeLeft">
+          <div v-if="showThankYou">
+            <p class="title">Thank you for your participation!</p>
+            <p>The results will be posted once enough people complete the survey.</p>
+            <p>Feel free to share this link.</p>
+            <br>
+            <br>
+            <div class="notification is-link">
+              <a style="font-size: 1.1em">http://bolnorecoffee.plebbs.com</a>
+            </div>            
+          </div>
+        </transition>
       </div>
     </div>
 
