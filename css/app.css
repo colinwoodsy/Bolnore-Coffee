@@ -14,3 +14,39 @@
   font-weight: bold;
   padding-left: 15px;
 }
+
+
+/*animations*/
+.fade-in-slide-in-from-left {
+  animation: .5s ease-out 0s 1 fadeInSlideInFromLeft;
+}
+
+.fade-in-slide-in-from-top {
+  animation: .8s ease-out 0s 1 fadeInSlideInFromTop;
+}
+
+@keyframes fadeInSlideInFromLeft {
+  0% {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes fadeInSlideInFromTop {
+  0% {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+  50% {
+    transform: translateY(-100%);
+    opacity: 0;
+  }  
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
