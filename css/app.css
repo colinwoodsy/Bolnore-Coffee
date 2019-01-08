@@ -24,10 +24,13 @@
 .fade-in-slide-in-from-top {
   animation: .8s ease-out 0s 1 fadeInSlideInFromTop;
 }
+.fade-in-slide-in-from-bottom {
+  animation: 1.1s ease-out 0s 1 fadeInSlideInFromBottom;
+}
 
 @keyframes fadeInSlideInFromLeft {
   0% {
-    transform: translateX(-100%);
+    transform: translateX(-10%);
     opacity: 0;
   }
   100% {
@@ -43,6 +46,21 @@
   }
   50% {
     transform: translateY(-100%);
+    opacity: 0;
+  }  
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes fadeInSlideInFromBottom {
+  0% {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+  60% {
+    transform: translateY(80%);
     opacity: 0;
   }  
   100% {
