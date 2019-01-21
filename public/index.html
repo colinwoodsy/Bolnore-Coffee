@@ -48,9 +48,9 @@
             enter-active-class="bounceInDown"
             leave-active-class="bounceOutDown">
             <template
-              v-for="(title, index) in questions"
+              v-for="(question, index) in questions"
               :key="index">
-              <p class="title" v-if="questionIndex === index">{{ title }}</p>
+              <p class="title" v-if="questionIndex === index">{{ question.text }}</p>
             </template>
           </transition>
           <transition
