@@ -1,6 +1,7 @@
 const sys = require('sys')
 var sqlite3 = require('sqlite3').verbose();
-var file = __dirname + "/dbs/bolnorecoffee";
+// var file = __dirname + "/dbs/bolnorecoffee";
+var file = __dirname + "/storage/dbs/bolnorecoffee";
 
 // https://github.com/mapbox/node-sqlite3/issues/674
 var db = new sqlite3.Database(file, sqlite3.OPEN_READWRITE | sqlite3.OPEN_CREATE, function (err) {
