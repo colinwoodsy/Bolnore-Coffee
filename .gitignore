@@ -1,2 +1,4 @@
 assets
 node_modules
+database/dbs/*
+!database/dbs/.gitkeep
