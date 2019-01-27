@@ -1,11 +1,21 @@
 const sys = require('sys')
+const fs = require('fs')
 var sqlite3 = require('sqlite3').verbose();
-// var file = __dirname + "/dbs/bolnorecoffee";
-// var file = __dirname + "/storage/dbs/bolnorecoffee";
-var file = "/storage/dbs/bolnorecoffee";
+
+// check dbs path
+const dbFileName = 'bolnorecoffee'
+const dbFilePath = '/storage/dbs/';
+let dbFullPath = dbFilePath + dbFileName
+try {
+  if (!fs.existsSync(dbFilePath)) {
+    dbFullPath = __dirname + dbFilePath + dbFileName
+  }
+} catch(err) {
+  throw err;
+}
 
 // https://github.com/mapbox/node-sqlite3/issues/674
-var db = new sqlite3.Database(file, sqlite3.OPEN_READWRITE | sqlite3.OPEN_CREATE, function (err) {
+const db = new sqlite3.Database(dbFullPath, sqlite3.OPEN_READWRITE | sqlite3.OPEN_CREATE, function (err) {
   if (err) console.log("SQL Lite error", err.message);
 });
 
