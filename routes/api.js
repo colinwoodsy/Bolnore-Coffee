@@ -37,7 +37,7 @@ router.post('/answers', function(req, res, next) {
 			if (Boolean(rows.length <= 0)) {
 				insertAnswers()
 			} else {
-				res.status(403).send('You have already submitted answers!');
+				res.status(403).send('You have already submitted your answers!');
 
 			}
 		})
