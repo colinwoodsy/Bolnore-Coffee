@@ -2,8 +2,10 @@ var app = new Vue({
   el: '#app',
   data: {
     showThankYou: false,
+    showError: false,
     showButtons: false,
     showTextInput: false,
+    errorMsg: '',
     textAnswer: '',
     answers: {},
     questionIndex: 0,
@@ -65,7 +67,9 @@ var app = new Vue({
           setTimeout(() => this.showThankYou = true, 700)
         })
         .catch((error) => {
-          console.log(error);
+          console.log("*error", error);
+          this.errorMsg = error.response.data
+          setTimeout(() => this.showError = true, 700)
         });     
     }
   },

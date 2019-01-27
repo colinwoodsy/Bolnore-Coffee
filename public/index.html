@@ -23,11 +23,11 @@
               <i class="fas fa-coffee"></i>
             </span>        
             </a>
-            <span class="navbar-burger burger" data-target="navbarMenuHeroB">
+            <!-- <span class="navbar-burger burger" data-target="navbarMenuHeroB">
               <span></span>
               <span></span>
               <span></span>
-            </span>
+            </span> -->
           </div>
         </div>
       </nav>
@@ -82,10 +82,25 @@
             <br>
             <br>
             <div class="notification is-link">
-              <a style="font-size: 1.1em">http://bolnorecoffee.plebbs.com</a>
+              <a style="font-size: 1.1em">bolnore-coffee.demo.plebbs.co.uk</a>
             </div>            
           </div>
         </transition>
+
+        <transition name="fadeLeft">
+            <div v-if="showError" class="notification is-danger">
+              <p class="title">
+                <span class="icon">
+                  <i class="fas fa-exclamation-triangle"></i>
+                </span>                  
+                Error!
+              </p>
+              <p>{{ errorMsg }}</p>
+              <br>
+              <br>
+            </div>
+          </transition>
+
       </div>
     </div>
 
